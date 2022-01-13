@@ -2663,6 +2663,10 @@ mergeruns(Tuplesortstate *state)
 		elog(LOG, "worker %d using " INT64_FORMAT " KB of memory for read buffers among %d input tapes",
 			 state->worker, state->availMem / 1024, numInputTapes);
 #endif
+		elog(LOG, "worker %d using " INT64_FORMAT " KB of memory for read buffers",
+			 state->worker, state->availMem);
+		elog(LOG, "worker %d using  %d input tapes",
+			 state->worker, numInputTapes);
 
 	state->read_buffer_size = Max(state->availMem / numInputTapes, 0);
 	USEMEM(state, state->read_buffer_size * numInputTapes);
