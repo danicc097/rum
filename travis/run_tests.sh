@@ -36,7 +36,7 @@ if [ "$LEVEL" = "hardcore" ]; then
 
 	# enable additional options
 	./configure \
-		CFLAGS='-O0 -ggdb3 -fno-omit-frame-pointer' \
+		CFLAGS='-fno-omit-frame-pointer' \
 		--enable-cassert \
 		--prefix=$CUSTOM_PG_BIN \
 		--quiet
